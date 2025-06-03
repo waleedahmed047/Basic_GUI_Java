@@ -65,7 +65,7 @@ public class Employee implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == addButton) {
-            int b = Integer.parseInt(salarytxt.getText().trim());
+            int b = Integer.parseInt(salarytxt.getText());
             int net = b * 12;
             netSalarytxt.setText(String.valueOf(net));
             employee = new Employee_Operation(fNametxt.getText(), stuEmailtxt.getText(), b);
