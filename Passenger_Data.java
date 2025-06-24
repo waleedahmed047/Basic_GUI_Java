@@ -5,11 +5,14 @@ public class Passenger_Data {
     String name;
      int id;
     int ticket;
-
-    public Passenger_Data(String name, int id, int ticket) {
+    String TrainClass;
+    String travel;
+    public Passenger_Data(String name,String Class,String travel, int id, int ticket) {
         this.name = name;
         this.id = id;
         this.ticket = ticket;
+        this.TrainClass=Class;
+        this.travel=travel;
     }
 
     public String getName() {
@@ -24,9 +27,20 @@ public class Passenger_Data {
         return ticket;
     }
 
-    @Override
-    public String toString() {
-        return  "  Name: "+name +"  CNIC: "+ id+"  Tickets: " + ticket;
+    public String getTrainClass() {
+        return TrainClass;
     }
+
+    public String getTravel() {
+        return travel;
+    }
+
+    public String toString() {
+        return  "name=" + name + ", id=" + id + ", ticket=" + ticket + ", TrainClass=" + TrainClass + ", travel=" + travel + "\n" ;
+    }
+
+
+
+ 
     
 }

@@ -28,7 +28,7 @@ public class Employee_Operation {
 
     @Override
     public String toString() {
-        return  "Name: "+name +"  Email: " + email+ "  Salary: " + salary ;
+        return  "Name: "+name +"  Email: " + email+ "  Salary: " + salary +"\n" ;
     }
    
     }

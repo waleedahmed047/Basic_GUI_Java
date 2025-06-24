@@ -1,5 +1,5 @@
 package labpractice.javaframe;
-
+import java.util.*;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -15,7 +15,7 @@ public class Employee implements ActionListener {
     JButton addButton;
     JButton viewButton;
     JTextField displayField;
-
+    ArrayList<Employee_Operation> array=new ArrayList<>(); 
     Employee() {
         JFrame jframe = new JFrame("Employee Class");
         jframe.setLayout(null);
@@ -36,6 +36,7 @@ public class Employee implements ActionListener {
         netSalary.setBounds(10, 170, 150, 20);
         netSalarytxt = new JTextField("");
         netSalarytxt.setBounds(170, 170, 150, 20);
+        netSalarytxt.setEditable(false);
         addButton = new JButton("Add");
         addButton.setBounds(10, 210, 150, 30);
         viewButton = new JButton("View");
@@ -43,7 +44,7 @@ public class Employee implements ActionListener {
         addButton.addActionListener(this);
         viewButton.addActionListener(this);
         displayField = new JTextField("");
-        displayField.setBounds(10, 260, 360, 30);
+        displayField.setBounds(10, 260, 360, 230);
 
         jframe.add(fName);
         jframe.add(fNametxt);
@@ -69,8 +70,13 @@ public class Employee implements ActionListener {
             int net = b * 12;
             netSalarytxt.setText(String.valueOf(net));
             employee = new Employee_Operation(fNametxt.getText(), stuEmailtxt.getText(), b);
+            array.add(employee);
+            fNametxt.setText("");
+            stuEmailtxt.setText("");
+            salarytxt.setText("");
+            
         } else if (e.getSource() == viewButton) {
-                displayField.setText(employee.toString());
+                displayField.setText(array.toString());
         }
     }
 }
